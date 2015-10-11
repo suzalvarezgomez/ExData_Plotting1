@@ -4,7 +4,8 @@ myWorkData <- myData[myData$Date %in% c("1/2/2007","2/2/2007") ,]
 
 
 # PREPARING CANVAS
-png("plot4.png", width=480, height = 480, bg = "white")
+# IMPORTANT!!!  The X-label (DateTime) are in SPANISH so THU=jue / FRI=vie / SAT =sáb
+png("plot4.png", width=480, height = 480, bg = NA)
 par(mfrow=c(2,2))
 #PLOTTING GRAPH1 x4 vs y4_1
 x4<- strptime(paste(myWorkData$Date, myWorkData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
