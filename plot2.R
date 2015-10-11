@@ -3,7 +3,8 @@ myData <- read.table("./Project1/household_power_consumption.txt", header=TRUE, 
 myWorkData <- myData[myData$Date %in% c("1/2/2007","2/2/2007") ,]
 
 # PREPARING CANVAS AND PLOTTING GRAPH 2 – VAR x2  vs y2
-png("plot2.png", width=480, height=480, bg = "white")
+# IMPORTANT!!!  The X-label (DateTime) are in SPANISH so THU=jue / FRI=vie / SAT =sáb
+png("plot2.png", width=480, height=480, bg = NA)
 x2<- strptime(paste(myWorkData$Date, myWorkData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 y2 <- myWorkData$Global_active_power
 plot(x2,y2, type="l", xlab="", ylab="Global Active Power (kilowatts)")
