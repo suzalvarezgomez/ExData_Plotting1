@@ -3,7 +3,8 @@ myData <- read.table("./Project1/household_power_consumption.txt", header=TRUE, 
 myWorkData <- myData[myData$Date %in% c("1/2/2007","2/2/2007") ,]
 
 # PREPARING CANVAS AND PLOTTING GRAPH 3 x3 vs y3_1/y3_2/y3_3 
-png("plot3.png", width=480, height = 480, bg = "white")
+# IMPORTANT!!!  The X-label (DateTime) are in SPANISH so THU=jue / FRI=vie / SAT =sáb
+png("plot3.png", width=480, height = 480, bg = NA)
 
 x3<- strptime(paste(myWorkData$Date, myWorkData$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 y3_1 <- myWorkData$Sub_metering_1
